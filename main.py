@@ -2,6 +2,7 @@
 import streamlit as st
 from myproject.pkg2 import complex_fn
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 def main():
     st.header("Hello from uv-setup-example!")
@@ -23,6 +24,17 @@ def main():
 
     # Display the plot in Streamlit
     st.pyplot(fig)
+
+    # Create a Plotly scatter plot using val1 and val2
+    scatter_fig = px.scatter(
+        x=[val1, val2],
+        y=[val1**2, val2**2],
+        labels={"x": "Input Values", "y": "Squared Values"},
+        title="Scatter Plot of Squared Values"
+    )
+
+    # Display the Plotly scatter plot in Streamlit
+    st.plotly_chart(scatter_fig)
 
 if __name__ == "__main__":
     main()

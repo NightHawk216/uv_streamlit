@@ -1,2 +1,5 @@
+# Despite having UV, you still need a requirements.txt file
+
 matplotlib>=3.10.3
 streamlit>=1.45.0
+plotly = "^6.0.1"
